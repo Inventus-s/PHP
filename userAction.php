@@ -11,6 +11,10 @@ if(isset($_POST['formSubmit'])){
     $hobbies = isset($_POST['hobbies']) ? implode(",", $_POST['hobbies']) : '';
     $edu = $_POST["education"];
 
+    if (isset($_FILES['fileToUpload']) && !$_FILES['fileToUpload']['error']) {
+        move_uploaded_file($_FILES['fileToUpload']['tmp_name'],'img/'.$_FILES['fileToUpload']['name']);
+    }
+
     $query = "insert into user_details (`Name`,`Email`,`Password`,`Address`,`DOB`,`Gender`,`Hobby`,`Education`) VALUE('$name','$email','$pass','$add','$age','$gender','$hobbies','$edu') ";
     $result = mysqli_query($conn,$query);
     // echo "<pre>";

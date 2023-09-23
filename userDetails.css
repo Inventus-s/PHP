@@ -1,0 +1,15 @@
+
+
+.container{
+    padding: 10px 20px;
+    display: flex;
+    /* width: 100vw; */
+    /* gap: 500px; */
+    justify-content: space-between;
+}
+
+.profileImage > img {
+    width: 150px;
+    margin-right: 200px;
+    border-radius: 50%;
+}
